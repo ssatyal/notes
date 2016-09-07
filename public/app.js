@@ -29,7 +29,6 @@
     vm.destroy = function(note){
       var index = vm.notes.indexOf(note);
       vm.notes.splice(index, 1);
-      console.log("click");
     };
     vm.new_note = {};
     var form_name = document.querySelector('#notename');
