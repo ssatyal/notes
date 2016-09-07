@@ -10,19 +10,26 @@
   </head>
   <body>
   <h2>Notes App</h2>
-  <table data-ng-table="notesTable" class="table table-striped" data-ng-controller="notes_controller as vm">
-    <tr data-ng-repeat="note in vm.notes track by $index">
-      <td>
-        <div ng-click="vm.expand(note)">
-          <button data-ng-click="vm.destroy(note)">&cross;</button><a href="#">{{note.name}}</a>
-        </div>
-      </td>
-      <td>
-        <div ng-show="note.showfull">
-            <textarea rows="4" cols="50">{{note.name}}: {{note.content}}</textarea>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div data-ng-controller="notes_controller as vm">
+    <div colspan="1">
+        <input type="text" data-ng-model="vm.note.name" placeholder="New Note" id="notename"/>
+        <p><textarea type="text" data-ng-model="vm.note.content" placeholder="Type note here!" id="notecontent"></textarea></p>
+        <p><button data-ng-click="vm.create()">&plus;</button></p>
+    </div>
+    <table data-ng-table="notesTable">
+      <tr data-ng-repeat="note in vm.notes track by $index">
+        <td>
+          <div ng-click="vm.expand(note)">
+            <button data-ng-click="vm.destroy(note)">&cross;</button><a href="#">{{note.name}}</a>
+          </div>
+        </td>
+        <td>
+          <div ng-show="note.showfull">
+              <textarea rows="4" cols="50">{{note.name}}: {{note.content}}</textarea>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
   </body>
 </html>

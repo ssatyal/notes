@@ -31,5 +31,15 @@
       vm.notes.splice(index, 1);
       console.log("click");
     };
+    vm.new_note = {};
+    var form_name = document.querySelector('#notename');
+    var form_content = document.querySelector('#notecontent');
+    vm.create = function() {
+      vm.new_note = {name:form_name.value, content:form_content.value};
+      vm.notes.push(angular.copy(vm.new_note));
+      console.log(vm.notes);
+      form_name.value="";
+      form_content.value="";
+    }
   };
 })();
