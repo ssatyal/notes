@@ -37,7 +37,6 @@
     vm.create = function() {
       vm.new_note = {name:form_name.value, content:form_content.value};
       vm.notes.push(angular.copy(vm.new_note));
-      console.log(vm.notes);
       form_name.value="";
       form_content.value="";
     }
