@@ -1,6 +1,11 @@
 <h2>welcome</h2>
 <div data-ng-controller="notes_controller as vm">
   <div data-ng-repeat="note in vm.notes track by $index">
-    <p>{{note}}</p>
+    <div ng-click="vm.expand(note)">
+      <p>{{note.name}}</p>
+    </div>
+    <div ng-show="note.showfull">
+        <p contentEditable="true">{{note.content}}</p>
+    </div>
   </div>
 </div>
