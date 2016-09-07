@@ -9,7 +9,20 @@
     <script src="app.js"></script>
   </head>
   <body>
-  <h2><a data-ui-sref="welcome">Notes App</a></h2>
-  <div data-ui-view></div data-ui-view>
+  <h2>Notes App</h2>
+  <table data-ng-table="notesTable" class="table table-striped" data-ng-controller="notes_controller as vm">
+    <tr data-ng-repeat="note in vm.notes track by $index">
+      <td>
+        <div ng-click="vm.expand(note)">
+          <p><a href="#">{{note.name}}</a></p>
+        </div>
+      </td>
+      <td>
+        <div ng-show="note.showfull">
+            <textarea rows="4" cols="50">{{note.name}}: {{note.content}}</textarea>
+        </div>
+      </td>
+    </tr>
+  </table>
   </body>
 </html>
