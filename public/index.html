@@ -14,7 +14,7 @@
     <tr data-ng-repeat="note in vm.notes track by $index">
       <td>
         <div ng-click="vm.expand(note)">
-          <p><a href="#">{{note.name}}</a></p>
+          <button data-ng-click="vm.destroy(note)">&cross;</button><a href="#">{{note.name}}</a>
         </div>
       </td>
       <td>

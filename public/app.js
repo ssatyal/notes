@@ -26,5 +26,10 @@
         currentNote.showfull = currentNote === note && !currentNote.showfull;
     });
     };
-  }
+    vm.destroy = function(note){
+      var index = vm.notes.indexOf(note);
+      vm.notes.splice(index, 1);
+      console.log("click");
+    };
+  };
 })();
