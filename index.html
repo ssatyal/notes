@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Notes App</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico" />
+    <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
     <script src="app.js"></script>
   </head>
   <body>
-  <h2>Notes App</h2>
+  <h2>NotesApp</h2>
   <div data-ng-controller="notes_controller as vm">
     <div colspan="1">
         <input type="text" data-ng-model="vm.note.name" placeholder="New Note" id="notename"/>
@@ -19,8 +21,11 @@
     <table data-ng-table="notesTable">
       <tr data-ng-repeat="note in vm.notes track by $index">
         <td>
+          <button data-ng-click="vm.destroy(note)">&cross;</button>
+        </td>
+        <td>
           <div ng-click="vm.expand(note)">
-            <button data-ng-click="vm.destroy(note)">&cross;</button><a href="#">{{note.name}}</a>
+            <a href="#">{{note.name}}</a>
           </div>
         </td>
         <td>
