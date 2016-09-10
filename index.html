@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Notes App</title>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico" />
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
@@ -13,22 +14,22 @@
   <body>
   <h2>NotesApp</h2>
   <div data-ng-controller="notes_controller as vm">
-    <div colspan="1">
-        <input type="text" data-ng-model="vm.note.name" placeholder="New Note" id="notename"/>
+    <div colspan="1" id="createArea">
+        <input type="text" data-ng-model="vm.note.name" placeholder="New Note Name" id="notename"/>
         <p><textarea type="text" data-ng-model="vm.note.content" placeholder="Type note here!" id="notecontent"></textarea></p>
         <p><button data-ng-click="vm.create()">&plus;</button></p>
     </div>
-    <table data-ng-table="notesTable">
+    <table>
       <tr data-ng-repeat="note in vm.notes track by $index">
-        <td>
+        <td class="deleteButtons">
           <button data-ng-click="vm.destroy(note)">&cross;</button>
         </td>
-        <td>
+        <td class="noteNames">
           <div ng-click="vm.expand(note)">
             <a href="#">{{note.name}}</a>
           </div>
         </td>
-        <td>
+        <td class="noteContents">
           <div ng-show="note.showfull">
               <textarea rows="4" cols="50">{{note.content}}</textarea>
           </div>
