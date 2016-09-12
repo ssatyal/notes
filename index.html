@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--initialize angular to html-->
 <html data-ng-app="notesapp">
   <head>
     <meta charset="utf-8">
@@ -13,18 +14,23 @@
   </head>
   <body>
   <h2>NotesApp</h2>
+  <!--notes_controller from app.js brings in functions-->
   <div data-ng-controller="notes_controller as vm">
     <div id="createArea">
         <input type="text" data-ng-model="vm.note.name" placeholder="New Note Name" id="notename"/>
         <p><textarea data-ng-model="vm.note.content" placeholder="Type note here!" id="notecontent"></textarea></p>
+        <!--  vm.create() passes new note into notes area -->
         <p><button data-ng-click="vm.create()">&plus;</button></p>
     </div>
     <table>
+      <!--  ng-repeat is the angular way of looping -->
       <tr data-ng-repeat="note in vm.notes track by $index">
         <td class="deleteButtons">
+          <!-- attaches destroy function to each note -->
           <button data-ng-click="vm.destroy(note)">&cross;</button>
         </td>
         <td class="noteNames">
+          <!-- expand function hides other notes when clicked -->
           <div data-ng-click="vm.expand(note)">
             <a href="#">{{note.name}}</a>
           </div>
