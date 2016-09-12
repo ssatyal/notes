@@ -2,7 +2,7 @@
 
 ## installation instructions
 None! The app is hosted on github pages at: https://ssatyal.github.io/notes/
-It runs using the AngularJS library.
+..It runs using the AngularJS library.
 
 ## methodology
 For this app I initially suffered from scope creep and wanted to add a bunch of functionality. I almost over-complicated it and decided to strip out things I didn't think were necessary for the requirements (ex. having a show page for each of the notes instead of everything living on one page).
