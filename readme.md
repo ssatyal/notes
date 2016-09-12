@@ -12,4 +12,4 @@ After coming to the conclusion to start smaller, I also opted to not use any bui
 ## a note on the U in CRUD
 There is no 'update' function built into my angular code. Since the data is only persisting in a single browser session (and not into a db), I figured there doesn't really need to be a 'save' button and update function as long as the notes that are changed still have their new values when you click away and come back to them without refreshing the page. And they do.
 
-If this was a full REST app with a backend, I would implement an update function by using a custom Angular directive; this custom directive would also be mechanism by which you could instantiate a new note!
+If this was a full REST app with a backend, I would implement an update function by using a custom Angular directive; this custom directive would also be the same mechanism by which you could instantiate a new note!
