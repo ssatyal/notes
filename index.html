@@ -14,9 +14,9 @@
   <body>
   <h2>NotesApp</h2>
   <div data-ng-controller="notes_controller as vm">
-    <div colspan="1" id="createArea">
+    <div id="createArea">
         <input type="text" data-ng-model="vm.note.name" placeholder="New Note Name" id="notename"/>
-        <p><textarea type="text" data-ng-model="vm.note.content" placeholder="Type note here!" id="notecontent"></textarea></p>
+        <p><textarea data-ng-model="vm.note.content" placeholder="Type note here!" id="notecontent"></textarea></p>
         <p><button data-ng-click="vm.create()">&plus;</button></p>
     </div>
     <table>
@@ -25,12 +25,12 @@
           <button data-ng-click="vm.destroy(note)">&cross;</button>
         </td>
         <td class="noteNames">
-          <div ng-click="vm.expand(note)">
+          <div data-ng-click="vm.expand(note)">
             <a href="#">{{note.name}}</a>
           </div>
         </td>
         <td class="noteContents">
-          <div ng-show="note.showfull">
+          <div data-ng-show="note.showfull">
               <textarea rows="4" cols="50">{{note.content}}</textarea>
           </div>
         </td>

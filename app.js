@@ -8,18 +8,9 @@
   function NotesController() {
     var vm = this;
     vm.notes = [
-      {
-        name: "First Note",
-        content: "do something"
-      },
-      {
-        name: "Second Note",
-        content: "do another thing"
-      },
-      {
-        name: "Third Note",
-        content: "third thing"
-      }
+      { name: "First Note",   content: "do something" },
+      { name: "Second Note",  content: "do another thing" },
+      { name: "Third Note",   content: "third thing" }
     ];
     vm.expand = function(note){
       angular.forEach(vm.notes, function (currentNote) {
